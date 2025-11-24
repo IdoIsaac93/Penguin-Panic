@@ -1,24 +1,25 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class ScoreManager : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text scoreValueText;
-    [SerializeField] private TMP_Text totalScoreValueText1;
-    [SerializeField] private TMP_Text totalScoreValueText2;
+    [SerializeField] private List<TMP_Text> totalScoreValueText;
 
     private int currentScore = 0;
     private int totalScore = 0;
+    private int failedLevelScore = 0;
 
     //Subscribe to events
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         LevelManager.OnLevelComplete += AddTotalScore;
-        OrcaController.OnPlayerCaught += AddTotalScore;
+        OrcaController.OnPlayerCaught += HandlePlayerCaught;
         FishController.OnFishCaught += AddScore;
         SchoolController.OnSchoolCaught += AddScore;
     }
@@ -28,45 +29,23 @@ public class ScoreManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         LevelManager.OnLevelComplete -= AddTotalScore;
-        OrcaController.OnPlayerCaught -= AddTotalScore;
+        OrcaController.OnPlayerCaught -= HandlePlayerCaught;
         FishController.OnFishCaught -= AddScore;
         SchoolController.OnSchoolCaught -= AddScore;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //Reset scores on main menu
-        if (scene.buildIndex == 0)
+        bool hasScore = LevelManager.Instance != null && LevelManager.Instance.HasScore;
+
+        scoreText.gameObject.SetActive(hasScore);
+        scoreValueText.gameObject.SetActive(hasScore);
+
+        if (!hasScore)
         {
-            currentScore = 0;
             totalScore = 0;
-            if (totalScoreValueText1 != null || totalScoreValueText2 != null)
-            {
-                totalScoreValueText1.gameObject.SetActive(false);
-                totalScoreValueText2.gameObject.SetActive(false);
-            }
-            if (scoreValueText != null || scoreText != null)
-            {
-                scoreText.gameObject.SetActive(false);
-                scoreValueText.gameObject.SetActive(false);
-            }
-        }
-        //Enable score UI on other scenes
-        else
-        {
-            if (totalScoreValueText1 != null && totalScoreValueText2 != null)
-            {
-                totalScoreValueText1.gameObject.SetActive(true);
-                totalScoreValueText2.gameObject.SetActive(true);
-            }
-            if (scoreValueText != null && scoreText != null)
-            {
-                scoreText.gameObject.SetActive(true);
-                scoreValueText.gameObject.SetActive(true);
-            }
         }
 
-        //Reset current score
         currentScore = 0;
         UpdateScoreUI();
     }
@@ -98,10 +77,28 @@ public class ScoreManager : MonoBehaviour
 
     private void UpdateTotalScoreUI()
     {
-        if (totalScoreValueText1 != null && totalScoreValueText2 != null)
+        if (totalScoreValueText != null && totalScoreValueText.Count > 0)
         {
-            totalScoreValueText1.text = totalScore.ToString();
-            totalScoreValueText2.text = totalScore.ToString();
+            foreach (var textElement in totalScoreValueText)
+            {
+                if (textElement != null)
+                {
+                    textElement.text = totalScore.ToString();
+                }
+            }
         }
+    }
+
+    private void HandlePlayerCaught()
+    {
+        AddTotalScore();
+        failedLevelScore = currentScore;
+    }
+
+    public void HandleRetryLevel()
+    {
+        totalScore -= failedLevelScore;
+        failedLevelScore = 0;
+        UpdateTotalScoreUI();
     }
 }

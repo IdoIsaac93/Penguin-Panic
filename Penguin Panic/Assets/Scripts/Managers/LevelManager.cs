@@ -5,13 +5,30 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     [Header("Schools")]
-    public List<GameObject> schools = new();
+    [SerializeField] private List<GameObject> schools = new();
     public static event Action OnLevelComplete;
 
     [Header("Audio")]
     [SerializeField] private AudioClip BGM;
     [SerializeField] private AudioClip ambient;
 
+    [SerializeField] private bool hasScore = true;
+
+    public bool HasScore => hasScore;
+
+    public static LevelManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        //Check for multiple level managers in scene
+        if (Instance != null && Instance != this)
+        {
+            Debug.LogError("Multiple LevelManagers in scene!");
+        }
+
+        //Assign singleton instance
+        Instance = this;
+    }
     private void Start()
     {
         schools.AddRange(GameObject.FindGameObjectsWithTag("School"));
