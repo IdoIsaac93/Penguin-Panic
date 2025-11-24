@@ -75,7 +75,7 @@ AudioMixerController:
   - guid: 7b867cde12c339c429e681c6891b2b2f
     name: MasterVolume
   - guid: 916ea536103feb3488603fb55633e408
-    name: SEVolume
+    name: SFXVolume
   m_AudioMixerGroupViews:
   - guids:
     - 3f25e6f96f0b9244e8c75dd9f1f5ed95
@@ -138,7 +138,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SE
+  m_Name: SFX
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 96a3058c7629d3047b40e81f7138be43
   m_Children: []

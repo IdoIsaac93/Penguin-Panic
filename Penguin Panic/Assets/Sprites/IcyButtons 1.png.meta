@@ -1,64 +1,67 @@
 fileFormatVersion: 2
-guid: 9ef64956af9b4f540a2f9edbb266aeca
+guid: 4a85c795bf480874fa03807bc8939773
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5956009880127165601
-    second: IcyButtons_0
+      213: -5172236475849874644
+    second: IcyButtons 1_0
   - first:
-      213: -7230267937178247123
-    second: IcyButtons_1
+      213: 6858816185154740390
+    second: IcyButtons 1_1
   - first:
-      213: -4675227637548170178
-    second: IcyButtons_2
+      213: -7170214547384545458
+    second: IcyButtons 1_2
   - first:
-      213: -7933241703221028399
-    second: IcyButtons_3
+      213: -6951311675247661308
+    second: IcyButtons 1_3
   - first:
-      213: 1659298228324686878
-    second: IcyButtons_4
+      213: 1078650196252853493
+    second: IcyButtons 1_4
   - first:
-      213: 8895046491742121108
-    second: IcyButtons_5
+      213: -7337136138923929446
+    second: IcyButtons 1_5
   - first:
-      213: 2411158544747894361
-    second: IcyButtons_6
+      213: 2159052603305983239
+    second: IcyButtons 1_6
   - first:
-      213: -8830093728644722301
-    second: IcyButtons_7
+      213: 7892231564613568929
+    second: IcyButtons 1_7
   - first:
-      213: 7950815812916314550
-    second: IcyButtons_8
+      213: 688771005283257490
+    second: IcyButtons 1_8
   - first:
-      213: 8293637795525143663
-    second: IcyButtons_9
+      213: 3474529016273837396
+    second: IcyButtons 1_9
   - first:
-      213: -851208281653941302
-    second: IcyButtons_10
+      213: -4151482015166193629
+    second: IcyButtons 1_10
   - first:
-      213: 7115036505038031191
-    second: IcyButtons_11
+      213: 6725355154088061203
+    second: IcyButtons 1_11
   - first:
-      213: 2943538218063203375
-    second: IcyButtons_12
+      213: 553354516370499018
+    second: IcyButtons 1_12
   - first:
-      213: 8089430026661573201
-    second: IcyButtons_13
+      213: 6199016675340548990
+    second: IcyButtons 1_13
   - first:
-      213: 6965933721366180955
-    second: IcyButtons_14
+      213: 5315800163104730896
+    second: IcyButtons 1_14
   - first:
-      213: 2377468657136325469
-    second: IcyButtons_15
+      213: 1282654906835837266
+    second: IcyButtons 1_15
   - first:
-      213: -3818565772346916299
-    second: IcyButtons_16
+      213: -3081554751964542337
+    second: IcyButtons 1_16
   - first:
-      213: -1312904993655847731
-    second: IcyButtons_17
+      213: 5634759450097131194
+    second: IcyButtons 1_17
   - first:
-      213: -7361792159549337235
-    second: IcyButtons_18
+      213: -6961885481272941674
+    second: IcyButtons 1_18
+  - first:
+      213: -5724306621308616644
+    second: IcyButtons 1_19
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -154,7 +157,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: IcyButtons_0
+      name: IcyButtons Accept
       rect:
         serializedVersion: 2
         x: 522
@@ -162,21 +165,21 @@ TextureImporter:
         width: 438
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f5bad400290085da0800000000000000
-      internalID: -5956009880127165601
+      spriteID: c2366a234568838b0800000000000000
+      internalID: -5172236475849874644
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_1
+      name: IcyButtons Cancel
       rect:
         serializedVersion: 2
         x: 1086
@@ -184,21 +187,21 @@ TextureImporter:
         width: 438
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2028956e9de8ab90800000000000000
-      internalID: -7230267937178247123
+      spriteID: 6a029d71bf86f2f50800000000000000
+      internalID: 6858816185154740390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_2
+      name: IcyButtons Play
       rect:
         serializedVersion: 2
         x: 1650
@@ -206,21 +209,21 @@ TextureImporter:
         width: 438
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e344adbeb314e1fb0800000000000000
-      internalID: -4675227637548170178
+      spriteID: e4f4ecbcbd74e7c90800000000000000
+      internalID: -7170214547384545458
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_3
+      name: IcyButtons Pause
       rect:
         serializedVersion: 2
         x: 2214
@@ -228,21 +231,21 @@ TextureImporter:
         width: 438
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d9123af3b677e190800000000000000
-      internalID: -7933241703221028399
+      spriteID: 40f66d96cdaf78f90800000000000000
+      internalID: -6951311675247661308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_4
+      name: IcyButtons Mute
       rect:
         serializedVersion: 2
         x: 2778
@@ -250,21 +253,21 @@ TextureImporter:
         width: 438
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1c5ab382f2070710800000000000000
-      internalID: 1659298228324686878
+      spriteID: 5f48e8873a228fe00800000000000000
+      internalID: 1078650196252853493
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_5
+      name: IcyButtons Settings
       rect:
         serializedVersion: 2
         x: 3342
@@ -272,21 +275,21 @@ TextureImporter:
         width: 438
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49cafd008ad817b70800000000000000
-      internalID: 8895046491742121108
+      spriteID: a9012c23e814d2a90800000000000000
+      internalID: -7337136138923929446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_6
+      name: IcyButtons Menu
       rect:
         serializedVersion: 2
         x: 3905
@@ -294,21 +297,21 @@ TextureImporter:
         width: 438
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95698dcebe7267120800000000000000
-      internalID: 2411158544747894361
+      spriteID: 70d7f6f47ee76fd10800000000000000
+      internalID: 2159052603305983239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_7
+      name: IcyButtons LeftArrow
       rect:
         serializedVersion: 2
         x: 4463
@@ -316,21 +319,21 @@ TextureImporter:
         width: 451
         height: 434
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3811ab2a984357580800000000000000
-      internalID: -8830093728644722301
+      spriteID: 1a9caed0bc6d68d60800000000000000
+      internalID: 7892231564613568929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_8
+      name: IcyButtons RightArrow
       rect:
         serializedVersion: 2
         x: 5027
@@ -338,21 +341,21 @@ TextureImporter:
         width: 451
         height: 430
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6b18f6b4bd8f65e60800000000000000
-      internalID: 7950815812916314550
+      spriteID: 29c4f7d74910f8900800000000000000
+      internalID: 688771005283257490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_9
+      name: IcyButtons Rectangle
       rect:
         serializedVersion: 2
         x: 522
@@ -360,21 +363,21 @@ TextureImporter:
         width: 1583
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f6ca70a22abe81370800000000000000
-      internalID: 8293637795525143663
+      spriteID: 45d1ac04bb1083030800000000000000
+      internalID: 3474529016273837396
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_10
+      name: IcyButtons Login
       rect:
         serializedVersion: 2
         x: 2435
@@ -382,21 +385,21 @@ TextureImporter:
         width: 1130
         height: 1208
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: acb6526e396ef24f0800000000000000
-      internalID: -851208281653941302
+      spriteID: 320a89a4a19f266c0800000000000000
+      internalID: -4151482015166193629
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_11
+      name: IcyButtons Rounded
       rect:
         serializedVersion: 2
         x: 3895
@@ -404,21 +407,21 @@ TextureImporter:
         width: 1583
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7598ab61100bdb260800000000000000
-      internalID: 7115036505038031191
+      spriteID: 319e2c351e2455d50800000000000000
+      internalID: 6725355154088061203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_12
+      name: IcyButtons RectangleIndent
       rect:
         serializedVersion: 2
         x: 522
@@ -426,21 +429,21 @@ TextureImporter:
         width: 1583
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2c817ee96c89d820800000000000000
-      internalID: 2943538218063203375
+      spriteID: ac52f173009eda700800000000000000
+      internalID: 553354516370499018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_13
+      name: IcyButtons RoundedFilled
       rect:
         serializedVersion: 2
         x: 3895
@@ -448,65 +451,87 @@ TextureImporter:
         width: 1583
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 152ba86efbd634070800000000000000
-      internalID: 8089430026661573201
+      spriteID: e7b756a82d4570650800000000000000
+      internalID: 6199016675340548990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_14
+      name: IcyButtons SliderHandle
       rect:
         serializedVersion: 2
-        x: 522
-        y: 545
-        width: 3043
-        height: 232
+        x: 169
+        y: 423
+        width: 174
+        height: 171
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b5432feffc7fba060800000000000000
-      internalID: 6965933721366180955
+      spriteID: 01f22d2851485c940800000000000000
+      internalID: 5315800163104730896
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_15
+      name: IcyButtons SliderFill
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 620
+        width: 2904
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 251ac5b87d7ecc110800000000000000
+      internalID: 1282654906835837266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IcyButtons PowerUp
       rect:
         serializedVersion: 2
         x: 3784
-        y: 234
+        y: 239
         width: 368
         height: 540
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d535c35b5277ef020800000000000000
-      internalID: 2377468657136325469
+      spriteID: f7a8c35a74e1c35d0800000000000000
+      internalID: -3081554751964542337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_16
+      name: IcyButtons Star
       rect:
         serializedVersion: 2
         x: 4257
@@ -514,21 +539,21 @@ TextureImporter:
         width: 561
         height: 540
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5320cc369aab10bc0800000000000000
-      internalID: -3818565772346916299
+      spriteID: abe90d99ddfa23e40800000000000000
+      internalID: 5634759450097131194
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_17
+      name: IcyButtons StarFill
       rect:
         serializedVersion: 2
         x: 4917
@@ -536,21 +561,21 @@ TextureImporter:
         width: 561
         height: 540
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dc48e454ddf97cde0800000000000000
-      internalID: -1312904993655847731
+      spriteID: 693e6c95a0a626f90800000000000000
+      internalID: -6961885481272941674
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IcyButtons_18
+      name: IcyButtons Slider
       rect:
         serializedVersion: 2
         x: 522
@@ -558,15 +583,15 @@ TextureImporter:
         width: 3043
         height: 231
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d615ecb0909a5d990800000000000000
-      internalID: -7361792159549337235
+      spriteID: c30cb73e47d2f80b0800000000000000
+      internalID: -5724306621308616644
       vertices: []
       indices: 
       edges: []
@@ -575,7 +600,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 75ec860d39ee5474fb213e10de201d0c
     internalID: 0
     vertices: []
     indices: 
@@ -585,25 +610,27 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      IcyButtons_0: -5956009880127165601
-      IcyButtons_1: -7230267937178247123
-      IcyButtons_10: -851208281653941302
-      IcyButtons_11: 7115036505038031191
-      IcyButtons_12: 2943538218063203375
-      IcyButtons_13: 8089430026661573201
-      IcyButtons_14: 6965933721366180955
-      IcyButtons_15: 2377468657136325469
-      IcyButtons_16: -3818565772346916299
-      IcyButtons_17: -1312904993655847731
-      IcyButtons_18: -7361792159549337235
-      IcyButtons_2: -4675227637548170178
-      IcyButtons_3: -7933241703221028399
-      IcyButtons_4: 1659298228324686878
-      IcyButtons_5: 8895046491742121108
-      IcyButtons_6: 2411158544747894361
-      IcyButtons_7: -8830093728644722301
-      IcyButtons_8: 7950815812916314550
-      IcyButtons_9: 8293637795525143663
+      IcyButtons Accept: -5172236475849874644
+      IcyButtons Cancel: 6858816185154740390
+      IcyButtons LeftArrow: 7892231564613568929
+      IcyButtons Login: -4151482015166193629
+      IcyButtons Menu: 2159052603305983239
+      IcyButtons Mute: 1078650196252853493
+      IcyButtons Pause: -6951311675247661308
+      IcyButtons Play: -7170214547384545458
+      IcyButtons PowerUp: -3081554751964542337
+      IcyButtons Rectangle: 3474529016273837396
+      IcyButtons RectangleIndent: 553354516370499018
+      IcyButtons RightArrow: 688771005283257490
+      IcyButtons Rounded: 6725355154088061203
+      IcyButtons RoundedFilled: 6199016675340548990
+      IcyButtons Settings: -7337136138923929446
+      IcyButtons Slider: -5724306621308616644
+      IcyButtons SliderFill: 1282654906835837266
+      IcyButtons SliderHandle: 5315800163104730896
+      IcyButtons Star: 5634759450097131194
+      IcyButtons StarFill: -6961885481272941674
+      IcyButtonsPause: -6951311675247661308
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
