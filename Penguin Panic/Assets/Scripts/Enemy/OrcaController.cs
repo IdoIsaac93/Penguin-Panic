@@ -14,6 +14,9 @@ public class OrcaController : MonoBehaviour
     [SerializeField] private float avoidanceRadius = 1.5f;
     [SerializeField] private float avoidanceForce = 5f;
 
+    [Header("Damage Settings")]
+    [SerializeField] private int damage = 1;
+
     public static event Action OnPlayerCaught;
 
     private Rigidbody rb;
@@ -122,7 +125,11 @@ public class OrcaController : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            //Eat the player
+            //Damage the player
+            PlayerHealth playerHealth = collision.collider.GetComponent<PlayerHealth>();
+            if (playerHealth != null) {
+                playerHealth.TakeDamage(damage);
+            }
             OnPlayerCaught?.Invoke();
         }
     }

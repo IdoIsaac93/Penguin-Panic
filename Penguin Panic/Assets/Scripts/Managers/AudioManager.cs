@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     [Header("Clips")]
     [SerializeField] private AudioClip winMusic;
     [SerializeField] private AudioClip loseMusic;
+    [SerializeField] private AudioClip takeDamageSFX;
     [SerializeField] private AudioClip fishCaughtSFX;
     [SerializeField] private AudioClip schoolCaughtSFX;
     [SerializeField] private AudioClip playerEnterWaterSFX;
@@ -32,8 +33,9 @@ public class AudioManager : MonoBehaviour
         PlayerController.OnEnterWater += OnPlayerEnterWater;
         FishController.OnFishCaught += OnFishCaught;
         SchoolController.OnSchoolCaught += OnSchoolCaught;
+        OrcaController.OnPlayerCaught += OnPlayerTakeDamage;
         LevelManager.OnLevelComplete += OnWin;
-        OrcaController.OnPlayerCaught += OnLose;
+        PlayerHealth.OnPlayerDeath += OnLose;
     }
 
     //Unsubscribe from events
@@ -42,8 +44,9 @@ public class AudioManager : MonoBehaviour
         PlayerController.OnEnterWater -= OnPlayerEnterWater;
         FishController.OnFishCaught -= OnFishCaught;
         SchoolController.OnSchoolCaught -= OnSchoolCaught;
+        OrcaController.OnPlayerCaught -= OnPlayerTakeDamage;
         LevelManager.OnLevelComplete -= OnWin;
-        OrcaController.OnPlayerCaught -= OnLose;
+        PlayerHealth.OnPlayerDeath -= OnLose;
     }
 
     //Background music
@@ -77,6 +80,7 @@ public class AudioManager : MonoBehaviour
     private void OnFishCaught(int score) => PlaySFX(fishCaughtSFX); //score is unused here but required by the event signature
     private void OnSchoolCaught(int score) => PlaySFX(schoolCaughtSFX); //score is unused here but required by the event signature
     private void OnPlayerEnterWater() => PlaySFX(playerEnterWaterSFX);
+    private void OnPlayerTakeDamage() => PlaySFX(takeDamageSFX);
     private void OnWin() 
     { 
         PlayBGM(winMusic, false); 

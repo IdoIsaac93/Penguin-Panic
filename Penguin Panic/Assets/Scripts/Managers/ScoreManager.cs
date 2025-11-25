@@ -19,7 +19,7 @@ public class ScoreManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
         LevelManager.OnLevelComplete += AddTotalScore;
-        OrcaController.OnPlayerCaught += HandlePlayerCaught;
+        PlayerHealth.OnPlayerDeath += OnLose;
         FishController.OnFishCaught += AddScore;
         SchoolController.OnSchoolCaught += AddScore;
     }
@@ -29,19 +29,19 @@ public class ScoreManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
         LevelManager.OnLevelComplete -= AddTotalScore;
-        OrcaController.OnPlayerCaught -= HandlePlayerCaught;
+        PlayerHealth.OnPlayerDeath -= OnLose;
         FishController.OnFishCaught -= AddScore;
         SchoolController.OnSchoolCaught -= AddScore;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        bool hasScore = LevelManager.Instance != null && LevelManager.Instance.HasScore;
+        bool hasHUD = LevelManager.Instance != null && LevelManager.Instance.HasHUD;
 
-        scoreText.gameObject.SetActive(hasScore);
-        scoreValueText.gameObject.SetActive(hasScore);
+        scoreText.gameObject.SetActive(hasHUD);
+        scoreValueText.gameObject.SetActive(hasHUD);
 
-        if (!hasScore)
+        if (!hasHUD)
         {
             totalScore = 0;
         }
@@ -89,7 +89,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void HandlePlayerCaught()
+    private void OnLose()
     {
         AddTotalScore();
         failedLevelScore = currentScore;

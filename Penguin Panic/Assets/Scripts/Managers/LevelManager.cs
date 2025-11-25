@@ -12,9 +12,9 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private AudioClip BGM;
     [SerializeField] private AudioClip ambient;
 
-    [SerializeField] private bool hasScore = true;
+    [SerializeField] private bool hasHUD = true;
 
-    public bool HasScore => hasScore;
+    public bool HasHUD => hasHUD;
 
     public static LevelManager Instance { get; private set; }
 

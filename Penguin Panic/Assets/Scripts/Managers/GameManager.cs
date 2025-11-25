@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             //Subscribe to events
             SceneManager.sceneLoaded += OnSceneLoaded;
-            OrcaController.OnPlayerCaught += TriggerLoseScreen;
+            PlayerHealth.OnPlayerDeath += TriggerLoseScreen;
             LevelManager.OnLevelComplete += TriggerWinScreen;
         }
         else
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        OrcaController.OnPlayerCaught -= TriggerLoseScreen;
+        PlayerHealth.OnPlayerDeath -= TriggerLoseScreen;
         LevelManager.OnLevelComplete -= TriggerWinScreen;
     }
 
