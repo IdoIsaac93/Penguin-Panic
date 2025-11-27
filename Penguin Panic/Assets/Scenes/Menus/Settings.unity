@@ -1419,7 +1419,7 @@ GameObject:
   - component: {fileID: 548633439}
   - component: {fileID: 548633440}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: MasterSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2725,7 +2725,7 @@ GameObject:
   - component: {fileID: 970476536}
   - component: {fileID: 970476537}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: BGMSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3569,7 +3569,7 @@ GameObject:
   - component: {fileID: 1230717561}
   - component: {fileID: 1230717562}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: SFXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4356,7 +4356,7 @@ GameObject:
   - component: {fileID: 1462504533}
   - component: {fileID: 1462504534}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: AmbientSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4483,6 +4483,7 @@ MonoBehaviour:
   sfxSource: {fileID: 1446814920}
   winMusic: {fileID: 8300000, guid: 6342f8b1239dc9345a21314547c4baf0, type: 3}
   loseMusic: {fileID: 8300000, guid: f5b5c5ffa60b2234a9fbdfd7a4bbd71c, type: 3}
+  takeDamageSFX: {fileID: 0}
   fishCaughtSFX: {fileID: 8300000, guid: fa378b4720c212344ae9a7ea47ca094f, type: 3}
   schoolCaughtSFX: {fileID: 8300000, guid: d051a875b47e10940ac8234c98c96b4e, type: 3}
   playerEnterWaterSFX: {fileID: 8300000, guid: 6f1746316341f874e9d294da9baa3c39, type: 3}
@@ -4498,11 +4499,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b63e9880bdb2364da23bae9e36f3d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  scoreText: {fileID: 1169044691}
-  scoreValueText: {fileID: 1220208811}
-  totalScoreValueText:
-  - {fileID: 1335896776}
-  - {fileID: 1152262508}
 --- !u!114 &1467607882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4516,6 +4512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player: {fileID: 0}
+  uiManager: {fileID: 0}
   loseScreen: {fileID: 1352642780}
   WinScreen: {fileID: 36464933}
   pauseMenu: {fileID: 299985251}

@@ -1436,6 +1436,7 @@ RectTransform:
   - {fileID: 780272547}
   - {fileID: 532767877}
   - {fileID: 252915154}
+  - {fileID: 957766776}
   m_Father: {fileID: 1796639777}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3008,6 +3009,68 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &957766775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 957766776}
+  - component: {fileID: 957766777}
+  m_Layer: 5
+  m_Name: Health
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &957766776
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957766775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 461069497}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 350, y: 450}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &957766777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 957766775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 25
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &961739749
 GameObject:
   m_ObjectHideFlags: 0
@@ -3177,7 +3240,7 @@ MonoBehaviour:
   schools: []
   BGM: {fileID: 8300000, guid: 917da9687fc632c49991d22c5d5b2bda, type: 3}
   ambient: {fileID: 0}
-  hasScore: 0
+  hasHUD: 0
 --- !u!4 &1098473520
 Transform:
   m_ObjectHideFlags: 0
@@ -4503,6 +4566,7 @@ GameObject:
   - component: {fileID: 1796639776}
   - component: {fileID: 1796639775}
   - component: {fileID: 1796639781}
+  - component: {fileID: 1796639782}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4522,11 +4586,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b63e9880bdb2364da23bae9e36f3d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  scoreText: {fileID: 1354378662}
-  scoreValueText: {fileID: 602876988}
-  totalScoreValueText:
-  - {fileID: 162180875}
-  - {fileID: 681337058}
 --- !u!114 &1796639776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4540,6 +4599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player: {fileID: 0}
+  uiManager: {fileID: 1796639782}
   loseScreen: {fileID: 946513650}
   WinScreen: {fileID: 780272546}
   pauseMenu: {fileID: 532767876}
@@ -4577,9 +4637,31 @@ MonoBehaviour:
   sfxSource: {fileID: 240754747}
   winMusic: {fileID: 8300000, guid: 6342f8b1239dc9345a21314547c4baf0, type: 3}
   loseMusic: {fileID: 8300000, guid: f5b5c5ffa60b2234a9fbdfd7a4bbd71c, type: 3}
+  takeDamageSFX: {fileID: 8300000, guid: 3543951c51f4b7144a9fc72d640277db, type: 3}
   fishCaughtSFX: {fileID: 8300000, guid: fa378b4720c212344ae9a7ea47ca094f, type: 3}
   schoolCaughtSFX: {fileID: 8300000, guid: d051a875b47e10940ac8234c98c96b4e, type: 3}
   playerEnterWaterSFX: {fileID: 8300000, guid: 6f1746316341f874e9d294da9baa3c39, type: 3}
+--- !u!114 &1796639782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796639774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34c976ef46a58f748a61450ded45c480, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  scoreText: {fileID: 1354378662}
+  scoreValueText: {fileID: 602876988}
+  totalScoreValueText:
+  - {fileID: 162180875}
+  - {fileID: 681337058}
+  healthStarPrefab: {fileID: 1596382911459530704, guid: c7a8994b633e0e740aa518f1b1fa6394, type: 3}
+  healthStarContainer: {fileID: 957766775}
+  healthStar: {fileID: -6961885481272941674, guid: 4a85c795bf480874fa03807bc8939773, type: 3}
+  healthStarEmpty: {fileID: 5634759450097131194, guid: 4a85c795bf480874fa03807bc8939773, type: 3}
 --- !u!1 &1803525810
 GameObject:
   m_ObjectHideFlags: 0

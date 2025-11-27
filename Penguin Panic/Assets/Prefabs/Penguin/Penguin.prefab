@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1263185109688826246}
   - component: {fileID: 8370144795910151072}
   - component: {fileID: 7063219537847013872}
+  - component: {fileID: 2415103335536515284}
   - component: {fileID: 8229160282331012688}
   m_Layer: 9
   m_Name: Penguin
@@ -134,6 +135,24 @@ MonoBehaviour:
   waterDrag: 1
   iceDrag: 5
   inputReader: {fileID: 11400000, guid: 5b89404a65d2a5c4d85bd0a33e26ee1d, type: 2}
+--- !u!114 &2415103335536515284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803944497127563217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cfa6699a59098b4f98d459e99b315bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 3
+  invincibilityDuration: 2
+  healthStarPrefab: {fileID: 0}
+  healthStarContainer: {fileID: 0}
+  healthStar: {fileID: 0}
+  healthStarEmpty: {fileID: 0}
 --- !u!54 &8229160282331012688
 Rigidbody:
   m_ObjectHideFlags: 0

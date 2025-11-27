@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
     //Singelton
     public static GameManager Instance { get; private set; }
 
-    //Globally accesible player reference
+    //Globally accesible references
     [SerializeField] private GameObject player;
+    [SerializeField] private UIManager uiManager;
     public GameObject Player => player;
+    public UIManager UIManager => uiManager;
 
     //UI
     [SerializeField] private GameObject loseScreen;

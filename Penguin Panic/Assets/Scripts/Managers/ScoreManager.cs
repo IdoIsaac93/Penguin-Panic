@@ -5,11 +5,6 @@ using System.Collections.Generic;
 
 public class ScoreManager : MonoBehaviour
 {
-    [Header("UI Elements")]
-    [SerializeField] private TMP_Text scoreText;
-    [SerializeField] private TMP_Text scoreValueText;
-    [SerializeField] private List<TMP_Text> totalScoreValueText;
-
     private int currentScore = 0;
     private int totalScore = 0;
     private int failedLevelScore = 0;
@@ -38,55 +33,30 @@ public class ScoreManager : MonoBehaviour
     {
         bool hasHUD = LevelManager.Instance != null && LevelManager.Instance.HasHUD;
 
-        scoreText.gameObject.SetActive(hasHUD);
-        scoreValueText.gameObject.SetActive(hasHUD);
-
         if (!hasHUD)
         {
             totalScore = 0;
         }
 
         currentScore = 0;
-        UpdateScoreUI();
+        GameManager.Instance.UIManager.UpdateScore(currentScore);
     }
 
     private void Start()
     {
-        UpdateScoreUI();
+        GameManager.Instance.UIManager.UpdateScore(currentScore);
     }
 
     private void AddScore(int amount)
     {
         currentScore += amount;
-        UpdateScoreUI();
+        GameManager.Instance.UIManager.UpdateScore(currentScore);
     }
 
     private void AddTotalScore()
     {
         totalScore += currentScore;
-        UpdateTotalScoreUI();
-    }
-
-    private void UpdateScoreUI()
-    {
-        if (scoreValueText != null)
-        {
-            scoreValueText.text = currentScore.ToString();
-        }
-    }
-
-    private void UpdateTotalScoreUI()
-    {
-        if (totalScoreValueText != null && totalScoreValueText.Count > 0)
-        {
-            foreach (var textElement in totalScoreValueText)
-            {
-                if (textElement != null)
-                {
-                    textElement.text = totalScore.ToString();
-                }
-            }
-        }
+        GameManager.Instance.UIManager.UpdateTotalScore(totalScore);
     }
 
     private void OnLose()
@@ -99,6 +69,6 @@ public class ScoreManager : MonoBehaviour
     {
         totalScore -= failedLevelScore;
         failedLevelScore = 0;
-        UpdateTotalScoreUI();
+        GameManager.Instance.UIManager.UpdateTotalScore(totalScore);
     }
 }

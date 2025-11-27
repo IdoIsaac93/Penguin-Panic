@@ -57,7 +57,6 @@ public class SettingsManager : MonoBehaviour
         }
         else
         {
-            masterMixer.GetFloat("MasterVolume", out lastMasterVolume);
             masterMixer.SetFloat("MasterVolume", -80f);
             masterSlider.value = 0f;
         }
@@ -72,7 +71,6 @@ public class SettingsManager : MonoBehaviour
         }
         else
         {
-            masterMixer.GetFloat("BGMVolume", out lastBGMVolume);
             masterMixer.SetFloat("BGMVolume", -80f);
             bgmSlider.value = 0f;
         }
@@ -87,7 +85,6 @@ public class SettingsManager : MonoBehaviour
         }
         else
         {
-            masterMixer.GetFloat("AmbientVolume", out lastAmbientVolume);
             masterMixer.SetFloat("AmbientVolume", -80f);
             ambientSlider.value = 0f;
         }
@@ -102,7 +99,6 @@ public class SettingsManager : MonoBehaviour
         }
         else
         {
-            masterMixer.GetFloat("SFXVolume", out lastSFXVolume);
             masterMixer.SetFloat("SFXVolume", -80f);
             sfxSlider.value = 0f;
         }
@@ -111,8 +107,10 @@ public class SettingsManager : MonoBehaviour
     //Check mute state
     private bool IsMuted(string parameter)
     {
+        print("Checking mute state for " + parameter);
         if (masterMixer.GetFloat(parameter, out float value))
         {
+            print("Current volume: " + value);
             return value <= -79f;
         }
         return false;
