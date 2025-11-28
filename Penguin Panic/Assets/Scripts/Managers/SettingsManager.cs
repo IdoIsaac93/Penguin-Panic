@@ -1,3 +1,4 @@
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -13,10 +14,38 @@ public class SettingsManager : MonoBehaviour
     [SerializeField] private Slider sfxSlider;
 
     //Cached volumes before mute
-    private float lastMasterVolume = 0f;
-    private float lastBGMVolume = 0f;
-    private float lastAmbientVolume = 0f;
-    private float lastSFXVolume = 0f;
+    private float lastMasterVolume;
+    private float lastBGMVolume;
+    private float lastAmbientVolume;
+    private float lastSFXVolume;
+
+    private float preMuteMasterVolume;
+    private float preMuteBGMVolume;
+    private float preMuteAmbientVolume;
+    private float preMuteSFXVolume;
+
+    private void Start()
+    {
+        // Initialise sliders to current mixer values
+        lastMasterVolume = InitSlider(masterSlider, "MasterVolume");
+        lastBGMVolume = InitSlider(bgmSlider, "BGMVolume");
+        lastAmbientVolume = InitSlider(ambientSlider, "AmbientVolume");
+        lastSFXVolume = InitSlider(sfxSlider, "SFXVolume");
+    }
+
+    private float InitSlider(Slider slider, string parameter)
+    {
+        if (masterMixer.GetFloat(parameter, out float dB))
+        {
+            slider.SetValueWithoutNotify(Mathf.Pow(10f, dB / 20f));
+            return dB;
+        }
+        else
+        {
+            slider.SetValueWithoutNotify(1f);
+            return 0f;
+        }
+    }
 
     //Volume setters
     public void SetMasterVolume()
@@ -29,21 +58,21 @@ public class SettingsManager : MonoBehaviour
     public void SetBGMVolume()
     {
         float value = bgmSlider.value;
-        lastBGMVolume = Mathf.Log10(value) * 20;
+        lastBGMVolume = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20;
         masterMixer.SetFloat("BGMVolume", lastBGMVolume);
     }
 
     public void SetAmbientVolume()
     {
         float value = ambientSlider.value;
-        lastAmbientVolume = Mathf.Log10(value) * 20;
+        lastAmbientVolume = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20;
         masterMixer.SetFloat("AmbientVolume", lastAmbientVolume);
     }
 
     public void SetSFXVolume()
     {
         float value = sfxSlider.value;
-        lastSFXVolume = Mathf.Log10(value) * 20;
+        lastSFXVolume = Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20;
         masterMixer.SetFloat("SFXVolume", lastSFXVolume);
     }
 
@@ -52,13 +81,17 @@ public class SettingsManager : MonoBehaviour
     {
         if (IsMuted("MasterVolume"))
         {
-            masterMixer.SetFloat("MasterVolume", lastMasterVolume);
-            masterSlider.value = Mathf.Pow(10f, lastMasterVolume / 20f);
+            masterMixer.SetFloat("MasterVolume", preMuteMasterVolume);
+            masterSlider.SetValueWithoutNotify(Mathf.Pow(10f, preMuteMasterVolume / 20f));
         }
         else
         {
+            if (masterMixer.GetFloat("MasterVolume", out float current))
+            {
+                preMuteMasterVolume = current;
+            }
             masterMixer.SetFloat("MasterVolume", -80f);
-            masterSlider.value = 0f;
+            masterSlider.SetValueWithoutNotify(0f);
         }
     }
 
@@ -66,13 +99,16 @@ public class SettingsManager : MonoBehaviour
     {
         if (IsMuted("BGMVolume"))
         {
-            masterMixer.SetFloat("BGMVolume", lastBGMVolume);
-            bgmSlider.value = Mathf.Pow(10f, lastBGMVolume / 20f);
+            masterMixer.SetFloat("BGMVolume", preMuteBGMVolume);
+            bgmSlider.SetValueWithoutNotify(Mathf.Pow(10f, preMuteBGMVolume / 20f));
         }
         else
         {
+            if (masterMixer.GetFloat("BGMVolume", out float current))
+                preMuteBGMVolume = current;
+
             masterMixer.SetFloat("BGMVolume", -80f);
-            bgmSlider.value = 0f;
+            bgmSlider.SetValueWithoutNotify(0f);
         }
     }
 
@@ -80,13 +116,16 @@ public class SettingsManager : MonoBehaviour
     {
         if (IsMuted("AmbientVolume"))
         {
-            masterMixer.SetFloat("AmbientVolume", lastAmbientVolume);
-            ambientSlider.value = Mathf.Pow(10f, lastAmbientVolume / 20f);
+            masterMixer.SetFloat("AmbientVolume", preMuteAmbientVolume);
+            ambientSlider.SetValueWithoutNotify(Mathf.Pow(10f, preMuteAmbientVolume / 20f));
         }
         else
         {
+            if (masterMixer.GetFloat("AmbientVolume", out float current))
+                preMuteAmbientVolume = current;
+
             masterMixer.SetFloat("AmbientVolume", -80f);
-            ambientSlider.value = 0f;
+            ambientSlider.SetValueWithoutNotify(0f);
         }
     }
 
@@ -94,13 +133,16 @@ public class SettingsManager : MonoBehaviour
     {
         if (IsMuted("SFXVolume"))
         {
-            masterMixer.SetFloat("SFXVolume", lastSFXVolume);
-            sfxSlider.value = Mathf.Pow(10f, lastSFXVolume / 20f);
+            masterMixer.SetFloat("SFXVolume", preMuteSFXVolume);
+            sfxSlider.SetValueWithoutNotify(Mathf.Pow(10f, preMuteSFXVolume / 20f));
         }
         else
         {
+            if (masterMixer.GetFloat("SFXVolume", out float current))
+                preMuteSFXVolume = current;
+
             masterMixer.SetFloat("SFXVolume", -80f);
-            sfxSlider.value = 0f;
+            sfxSlider.SetValueWithoutNotify(0f);
         }
     }
 
@@ -111,6 +153,7 @@ public class SettingsManager : MonoBehaviour
         if (masterMixer.GetFloat(parameter, out float value))
         {
             print("Current volume: " + value);
+            print("Is muted: " + (value <= -79f));
             return value <= -79f;
         }
         return false;

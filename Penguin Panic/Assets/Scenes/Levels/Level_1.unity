@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player: {fileID: 0}
+  uiManager: {fileID: 0}
   loseScreen: {fileID: 1951441506}
   WinScreen: {fileID: 501139950}
   pauseMenu: {fileID: 55230317}
@@ -297,10 +298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b63e9880bdb2364da23bae9e36f3d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
-  scoreText: {fileID: 1978228902}
-  scoreValueText: {fileID: 374087772}
-  totalScoreValueText1: {fileID: 375681500}
-  totalScoreValueText2: {fileID: 254238131}
 --- !u!82 &70899123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -609,9 +606,203 @@ MonoBehaviour:
   sfxSource: {fileID: 70899123}
   winMusic: {fileID: 8300000, guid: 6342f8b1239dc9345a21314547c4baf0, type: 3}
   loseMusic: {fileID: 8300000, guid: f5b5c5ffa60b2234a9fbdfd7a4bbd71c, type: 3}
+  takeDamageSFX: {fileID: 0}
   fishCaughtSFX: {fileID: 8300000, guid: fa378b4720c212344ae9a7ea47ca094f, type: 3}
   schoolCaughtSFX: {fileID: 8300000, guid: d051a875b47e10940ac8234c98c96b4e, type: 3}
   playerEnterWaterSFX: {fileID: 8300000, guid: 6f1746316341f874e9d294da9baa3c39, type: 3}
+--- !u!1001 &78793724
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585501148177589628, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 859171252}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: scoreAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: avoidPlayerRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079048130982477846, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731027783714999838, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692904286461393874, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699758721801492925, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Name
+      value: School_1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040915575550923794, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
 --- !u!1001 &83346918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1872,6 +2063,199 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376697176}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &433377968
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1476130247857800941, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585501148177589628, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: speed
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 859171252}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: scoreAmount
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083071123209626743, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: avoidPlayerRadius
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2582674784722907937, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079048130982477846, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3194795137594442094, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3774832773137325281, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731027783714999838, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6851657682034716047, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: minSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: turnSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceForce
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7183196663938451685, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: playerAvoidanceRadius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692904286461393874, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699758721801492925, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Name
+      value: School_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9040915575550923794, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
+      propertyPath: m_Constraints
+      value: 116
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1968c930285f5b6458edd33754f7cbee, type: 3}
 --- !u!1 &501139950
 GameObject:
   m_ObjectHideFlags: 0
@@ -3069,6 +3453,7 @@ MonoBehaviour:
   schools: []
   BGM: {fileID: 8300000, guid: caa25fb5774f06d4fb1866b30716af2a, type: 3}
   ambient: {fileID: 8300000, guid: d9a197ed296e6934997410f9eed15034, type: 3}
+  hasHUD: 1
 --- !u!4 &1831605367
 Transform:
   m_ObjectHideFlags: 0
@@ -3736,319 +4121,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa2d6888e425fd047a79404817ff029a, type: 3}
---- !u!1001 &1958830786090578404
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7.88
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 355096123559380835, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302436381621637625, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302436381621637625, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302436381621637625, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302436381621637625, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1302436381621637625, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262402933696250093, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262402933696250093, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262402933696250093, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262402933696250093, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2262402933696250093, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2323957417751625415, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2323957417751625415, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2323957417751625415, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2323957417751625415, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2323957417751625415, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2651336706529288120, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2651336706529288120, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2651336706529288120, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2651336706529288120, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2651336706529288120, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2820231464345039933, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533573103849524836, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533573103849524836, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533573103849524836, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533573103849524836, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3533573103849524836, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3733351539607416298, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3733351539607416298, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3733351539607416298, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3733351539607416298, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3733351539607416298, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3759498138153912692, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 3891418841937785707, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 4230028896959627684, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5012887034909492743, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Name
-      value: School_3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5651891808469281619, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5651891808469281619, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 859171252}
-    - target: {fileID: 5651891808469281619, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: scoreAmount
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 5651891808469281619, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: avoidPlayerRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6228625360131213342, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 6558930207443671306, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 7590100623385703988, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 7916868647857542987, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941630839219190990, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941630839219190990, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941630839219190990, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941630839219190990, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7941630839219190990, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8332004996123101527, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8332004996123101527, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8332004996123101527, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8332004996123101527, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8332004996123101527, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8655048481381762711, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 8852574698835092761, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 9023319313870750087, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9023319313870750087, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9023319313870750087, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9023319313870750087, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9023319313870750087, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157003768522259352, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157003768522259352, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157003768522259352, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157003768522259352, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157003768522259352, guid: 9bf90eafef317874487a05a23f146925, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9bf90eafef317874487a05a23f146925, type: 3}
 --- !u!1001 &6770240538913897447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4311,271 +4383,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eb512eee60c6a74085f52dcfa546e38, type: 3}
---- !u!1001 &7927530898750445484
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 472528827199225695, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 472528827199225695, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 472528827199225695, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 472528827199225695, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 472528827199225695, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 791124705441746802, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 1534057495303054262, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 1565322127142130568, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792232596595473938, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792232596595473938, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792232596595473938, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792232596595473938, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2792232596595473938, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933440067639136235, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933440067639136235, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933440067639136235, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933440067639136235, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2933440067639136235, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294506423540226640, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294506423540226640, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294506423540226640, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294506423540226640, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3294506423540226640, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3606823591193451384, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 3798936451148097196, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Name
-      value: School_2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368207065223233111, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: speed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368207065223233111, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 859171252}
-    - target: {fileID: 4368207065223233111, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: scoreAmount
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4368207065223233111, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: avoidPlayerRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895286362065602433, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895286362065602433, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895286362065602433, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895286362065602433, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4895286362065602433, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5736438920280766380, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 74.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5856417690122590255, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656108674412997445, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656108674412997445, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656108674412997445, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656108674412997445, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6656108674412997445, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677723989244484475, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677723989244484475, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677723989244484475, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677723989244484475, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6677723989244484475, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7034766155724048152, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 7254558598620222115, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 8058398202758362849, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870732590140461963, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: maxSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870732590140461963, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: minSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870732590140461963, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: turnSpeed
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870732590140461963, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceForce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8870732590140461963, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
-      propertyPath: playerAvoidanceRadius
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0723f692bb0bf5a4996a33f07f1c2ff9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -4591,6 +4398,6 @@ SceneRoots:
   - {fileID: 83346918}
   - {fileID: 727742613203960175}
   - {fileID: 6770240538913897447}
-  - {fileID: 7927530898750445484}
-  - {fileID: 1958830786090578404}
+  - {fileID: 78793724}
+  - {fileID: 433377968}
   - {fileID: 1831605367}

@@ -4567,6 +4567,7 @@ GameObject:
   - component: {fileID: 1796639775}
   - component: {fileID: 1796639781}
   - component: {fileID: 1796639782}
+  - component: {fileID: 1796639783}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4662,6 +4663,21 @@ MonoBehaviour:
   healthStarContainer: {fileID: 957766775}
   healthStar: {fileID: -6961885481272941674, guid: 4a85c795bf480874fa03807bc8939773, type: 3}
   healthStarEmpty: {fileID: 5634759450097131194, guid: 4a85c795bf480874fa03807bc8939773, type: 3}
+--- !u!114 &1796639783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796639774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8b6c662c479dac41909c84f21859fd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeveloperCheats
+  nextLevelKey: 110
+  healPlayerKey: 109
+  healAmount: 1
 --- !u!1 &1803525810
 GameObject:
   m_ObjectHideFlags: 0
