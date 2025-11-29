@@ -3,7 +3,7 @@ using UnityEngine;
 public class IcebergController : MonoBehaviour, IPoolable
 {
     [Header("Movement")]
-    [SerializeField] private float moveSpeed = 0.5f;
+    private float moveSpeed = 0.5f;
     [Tooltip("Up (0,0,1), Down (0,0,-1), Right (1,0,0), Left (-1,0,0)")]
     [SerializeField] private Vector3 moveDirection = Vector3.back;
 
@@ -11,6 +11,7 @@ public class IcebergController : MonoBehaviour, IPoolable
     [SerializeField] private float xBound = 40f;
     [SerializeField] private float zBound = 30f;
 
+    public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     public Vector3 Velocity => moveDirection.normalized * moveSpeed;
 
     private void FixedUpdate()

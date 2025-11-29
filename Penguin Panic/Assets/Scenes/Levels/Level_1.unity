@@ -267,9 +267,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player: {fileID: 0}
   uiManager: {fileID: 0}
-  loseScreen: {fileID: 1951441506}
-  WinScreen: {fileID: 501139950}
-  pauseMenu: {fileID: 55230317}
 --- !u!4 &70899121
 Transform:
   m_ObjectHideFlags: 0
@@ -298,6 +295,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b63e9880bdb2364da23bae9e36f3d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  timePenaltyPerSecond: 1
+  healthBonusPerHealth: 20
 --- !u!82 &70899123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3098,10 +3097,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e14a8809edc7241bc37129371bfdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceBergGenerator
+  icebergSpeed: 0.5
   spawnArea: {fileID: 991111285}
   spawnParent: {fileID: 1224824610}
   icebergPoolIds: 000000000100000002000000
-  spawnInterval: 12
+  spawnInterval: 22
   maxIcebergsPerSpawn: 5
   minDistanceBetweenSpawns: 10
   initialAmountOfIcebergs: 20

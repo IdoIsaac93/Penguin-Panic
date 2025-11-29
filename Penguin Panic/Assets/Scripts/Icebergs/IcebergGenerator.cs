@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class IceBergGenerator : MonoBehaviour
 {
+    [Header("Iceberg Settings")]
+    [SerializeField] private float icebergSpeed = 2f;
+
     [Header("Spawn Settings")]
     [SerializeField] private Transform spawnArea;
     [SerializeField] private Transform spawnParent;
@@ -40,6 +43,7 @@ public class IceBergGenerator : MonoBehaviour
         //Always spawn one iceberg at the center
         int centerPoolId = icebergPoolIds[Random.Range(0, icebergPoolIds.Count)];
         GameObject centerIceberg = ObjectPooler.Instance.SpawnFromPool(centerPoolId, Vector3.zero, Quaternion.identity);
+        centerIceberg.GetComponent<IcebergController>().MoveSpeed = icebergSpeed;
         if (centerIceberg != null && spawnParent != null)
             centerIceberg.transform.SetParent(spawnParent);
 
@@ -68,6 +72,7 @@ public class IceBergGenerator : MonoBehaviour
 
             int poolId = icebergPoolIds[Random.Range(0, icebergPoolIds.Count)];
             GameObject iceberg = ObjectPooler.Instance.SpawnFromPool(poolId, spawnPos, Quaternion.identity);
+            iceberg.GetComponent<IcebergController>().MoveSpeed = icebergSpeed;
             if (iceberg != null && spawnParent != null)
                 iceberg.transform.SetParent(spawnParent);
         }
@@ -101,6 +106,7 @@ public class IceBergGenerator : MonoBehaviour
 
             int poolId = icebergPoolIds[Random.Range(0, icebergPoolIds.Count)];
             GameObject iceberg = ObjectPooler.Instance.SpawnFromPool(poolId, spawnPos, Quaternion.identity);
+            iceberg.GetComponent<IcebergController>().MoveSpeed = icebergSpeed;
             if (iceberg != null && spawnParent != null)
             {
                 iceberg.transform.SetParent(spawnParent);

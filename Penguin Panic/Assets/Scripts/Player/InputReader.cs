@@ -7,6 +7,7 @@ using static InputSystem_Actions;
 public class InputReader : ScriptableObject, IPlayerActions
 {
     public event UnityAction<Vector2> Move = delegate { };
+    public event UnityAction Pause = delegate { };
 
     private InputSystem_Actions input;
 
@@ -55,5 +56,10 @@ public class InputReader : ScriptableObject, IPlayerActions
     public void OnMove(InputAction.CallbackContext context)
     {
         Move?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnPause(InputAction.CallbackContext context)
+    {
+        Pause?.Invoke();
     }
 }

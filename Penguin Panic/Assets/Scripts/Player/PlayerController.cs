@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         inputReader.Move += Move;
+        inputReader.Pause += Pause;
     }
 
     private void OnDisable()
@@ -51,6 +52,11 @@ public class PlayerController : MonoBehaviour
     private void Move(Vector2 direction)
     {
         movementDirection = direction;
+    }
+
+    private void Pause()
+    {
+        GameManager.Instance.PauseGame();
     }
 
     private void FixedUpdate()

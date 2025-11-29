@@ -1307,10 +1307,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e14a8809edc7241bc37129371bfdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceBergGenerator
+  icebergSpeed: 2
   spawnArea: {fileID: 409580167}
   spawnParent: {fileID: 282329397}
   icebergPoolIds: 000000000100000002000000
-  spawnInterval: 12
+  spawnInterval: 6
   maxIcebergsPerSpawn: 5
   minDistanceBetweenSpawns: 10
   initialAmountOfIcebergs: 20
@@ -2850,7 +2851,7 @@ MonoBehaviour:
   uiManager: {fileID: 0}
   loseScreen: {fileID: 131325114}
   WinScreen: {fileID: 1202541328}
-  pauseMenu: {fileID: 368430764}
+  pauseScreen: {fileID: 0}
 --- !u!4 &1286725722
 Transform:
   m_ObjectHideFlags: 0

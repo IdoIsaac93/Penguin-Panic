@@ -1936,6 +1936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e14a8809edc7241bc37129371bfdfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IceBergGenerator
+  icebergSpeed: 1
   spawnArea: {fileID: 1693139938}
   spawnParent: {fileID: 74832286}
   icebergPoolIds: 000000000100000002000000
@@ -2333,6 +2334,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b63e9880bdb2364da23bae9e36f3d82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
+  timePenaltyPerSecond: 1
+  healthBonusPerHealth: 20
 --- !u!114 &916067025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,9 +2350,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   player: {fileID: 0}
   uiManager: {fileID: 0}
-  loseScreen: {fileID: 1679612291}
-  WinScreen: {fileID: 1796907053}
-  pauseMenu: {fileID: 1737406182}
 --- !u!4 &916067026
 Transform:
   m_ObjectHideFlags: 0

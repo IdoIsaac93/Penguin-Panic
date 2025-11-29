@@ -152,19 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b390885a8853707438b7f9ca9eb7fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishController
-  minSpeed: 5
-  turnSpeed: 10
-  randomFreq: 5
-  randomForce: 8
-  maxSpeed: 14
+  minSpeed: 6
+  turnSpeed: 25
+  randomFreq: 4
+  randomForce: 5
+  maxSpeed: 15
   toOriginForce: 1
   toOriginRange: 0.1
   avoidanceRadius: 10
-  avoidanceForce: 8
+  avoidanceForce: 5
   followVelocity: 1
   followRadius: 3
-  playerAvoidanceRadius: 1
-  playerAvoidanceForce: 10
+  playerAvoidanceRadius: 4
+  playerAvoidanceForce: 7
   scoreAmount: 100
 --- !u!54 &4975386233164694680
 Rigidbody:

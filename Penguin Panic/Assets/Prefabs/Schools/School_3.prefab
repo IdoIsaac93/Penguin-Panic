@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4652996708070844169, guid: 11040e922f4e0d346af92647520067a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f86375e11c9e6346acc798d759b2324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -327,6 +331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish_1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4652996708070844169, guid: 11040e922f4e0d346af92647520067a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f86375e11c9e6346acc798d759b2324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -389,6 +397,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish_1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4652996708070844169, guid: 11040e922f4e0d346af92647520067a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f86375e11c9e6346acc798d759b2324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -451,6 +463,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish_1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4652996708070844169, guid: 11040e922f4e0d346af92647520067a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f86375e11c9e6346acc798d759b2324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -575,6 +591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish_1 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4652996708070844169, guid: 11040e922f4e0d346af92647520067a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f86375e11c9e6346acc798d759b2324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -637,6 +657,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish_1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4652996708070844169, guid: 11040e922f4e0d346af92647520067a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f86375e11c9e6346acc798d759b2324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -699,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fish_1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4652996708070844169, guid: 11040e922f4e0d346af92647520067a7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0f86375e11c9e6346acc798d759b2324, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

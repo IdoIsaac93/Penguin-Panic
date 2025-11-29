@@ -22,6 +22,7 @@ public class OrcaController : MonoBehaviour
     private Rigidbody rb;
     private int curPathIndex = 0;
     private Vector3 target;
+    private Animator animator;
 
     // Behaviors
     private Behavior behavior;
@@ -32,6 +33,7 @@ public class OrcaController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponentInChildren<Animator>();
         rb.linearDamping = waterDrag;
         //Initial Behavior
         SetBehavior(clockwiseLoop);
@@ -45,6 +47,11 @@ public class OrcaController : MonoBehaviour
         {
             curPathIndex = behavior.GetNextPoint(curPathIndex);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        animator.SetFloat("Speed", rb.linearVelocity.magnitude, 0.1f, Time.deltaTime);
     }
 
     //Movement Modes

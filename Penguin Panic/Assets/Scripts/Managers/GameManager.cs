@@ -13,10 +13,10 @@ public class GameManager : MonoBehaviour
     public GameObject Player => player;
     public UIManager UIManager => uiManager;
 
-    //UI
-    [SerializeField] private GameObject loseScreen;
-    [SerializeField] private GameObject WinScreen;
-    [SerializeField] private GameObject pauseMenu;
+    //Level Timer
+    private float levelTimer = 0;
+    public float LevelTimer => levelTimer;
+
     private void Awake()
     {
         //Singelton pattern
@@ -45,41 +45,66 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         player = GameObject.FindWithTag("Player");
+        levelTimer = 0f;
+    }
+
+    private void Update()
+    {
+        //Update level timer
+        if (LevelManager.Instance.HasHUD)
+        {
+            levelTimer += Time.deltaTime;
+            if (uiManager != null)
+            {
+                uiManager.UpdateTimerUI(levelTimer);
+            }
+        }
     }
 
     //Win Screen
     public void TriggerWinScreen()
     {
-        if (WinScreen != null)
+        if (uiManager != null)
         {
             Time.timeScale = 0f;
-            WinScreen.SetActive(true);
+            uiManager.OpenWinScreen();
         }
     }
 
     //Lose Screen
     public void TriggerLoseScreen()
     {
-        if (loseScreen != null)
+        if (uiManager != null)
         {
             Time.timeScale = 0f;
-            loseScreen.SetActive(true);
+            uiManager.OpenLoseScreen();
+        }
+    }
+
+    //Pause Screen
+    public void PauseGame()
+    {
+        if (uiManager != null)
+        {
+            //Pause
+            if (uiManager.TogglePauseMenu())
+            {
+                Time.timeScale = 0f;
+            }
+            //Resume
+            else
+            {
+                ResumeGame();
+            }
         }
     }
 
     public void ResumeGame()
     {
-        Time.timeScale = 1f;
-
-        //Close lose screen
-        if (loseScreen != null)
+        if (uiManager != null)
         {
-            loseScreen.SetActive(false);
-        }
-        //Close win screen
-        if (WinScreen != null)
-        {
-            WinScreen.SetActive(false);
+            Time.timeScale = 1f;
+            uiManager.CloseAllScreens();
         }
     }
 

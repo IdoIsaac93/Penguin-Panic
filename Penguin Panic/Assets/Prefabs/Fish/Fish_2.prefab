@@ -154,8 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FishController
   minSpeed: 4
   turnSpeed: 20
-  randomFreq: 2
-  randomForce: 3
+  randomFreq: 3
+  randomForce: 4
   maxSpeed: 10
   toOriginForce: 1
   toOriginRange: 0.1
@@ -164,8 +164,8 @@ MonoBehaviour:
   followVelocity: 1
   followRadius: 3
   playerAvoidanceRadius: 3
-  playerAvoidanceForce: 8
-  scoreAmount: 30
+  playerAvoidanceForce: 6
+  scoreAmount: 50
 --- !u!54 &4975386233164694680
 Rigidbody:
   m_ObjectHideFlags: 0
