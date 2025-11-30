@@ -42,7 +42,8 @@ public class IceBergGenerator : MonoBehaviour
 
         //Always spawn one iceberg at the center
         int centerPoolId = icebergPoolIds[Random.Range(0, icebergPoolIds.Count)];
-        GameObject centerIceberg = ObjectPooler.Instance.SpawnFromPool(centerPoolId, Vector3.zero, Quaternion.identity);
+        Quaternion randomRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        GameObject centerIceberg = ObjectPooler.Instance.SpawnFromPool(centerPoolId, Vector3.zero, randomRotation);
         centerIceberg.GetComponent<IcebergController>().MoveSpeed = icebergSpeed;
         if (centerIceberg != null && spawnParent != null)
             centerIceberg.transform.SetParent(spawnParent);
@@ -71,7 +72,8 @@ public class IceBergGenerator : MonoBehaviour
             usedPositions.Add(spawnPos);
 
             int poolId = icebergPoolIds[Random.Range(0, icebergPoolIds.Count)];
-            GameObject iceberg = ObjectPooler.Instance.SpawnFromPool(poolId, spawnPos, Quaternion.identity);
+            randomRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+            GameObject iceberg = ObjectPooler.Instance.SpawnFromPool(poolId, spawnPos, randomRotation);
             iceberg.GetComponent<IcebergController>().MoveSpeed = icebergSpeed;
             if (iceberg != null && spawnParent != null)
                 iceberg.transform.SetParent(spawnParent);
@@ -105,7 +107,8 @@ public class IceBergGenerator : MonoBehaviour
             usedPositions.Add(spawnPos);
 
             int poolId = icebergPoolIds[Random.Range(0, icebergPoolIds.Count)];
-            GameObject iceberg = ObjectPooler.Instance.SpawnFromPool(poolId, spawnPos, Quaternion.identity);
+            Quaternion randomRotation = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+            GameObject iceberg = ObjectPooler.Instance.SpawnFromPool(poolId, spawnPos, randomRotation);
             iceberg.GetComponent<IcebergController>().MoveSpeed = icebergSpeed;
             if (iceberg != null && spawnParent != null)
             {
