@@ -15,16 +15,19 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float invincibilityDuration = 2f;
     private bool isInvincible = true;
     private float invincibilityTimer = 0f;
-    private Collider collider;
+    private int playerLayer;
+    private int orcaLayer;
 
     public static event Action OnPlayerDeath;
 
     private void Start()
     {
         currentHealth = maxHealth;
-        collider = GetComponent<Collider>();
         GameManager.Instance.UIManager.InitHealthUI(maxHealth);
         GameManager.Instance.UIManager.UpdateHealthUI(currentHealth);
+        //Get layers for disabling collision
+        playerLayer = gameObject.layer;
+        orcaLayer = LayerMask.NameToLayer("Orca");
     }
 
     //Update health UI
@@ -38,7 +41,7 @@ public class PlayerHealth : MonoBehaviour
         if (isInvincible) return;
         currentHealth -= damage;
         //Deactivate collision
-        collider.enabled = false;
+        Physics.IgnoreLayerCollision(playerLayer, orcaLayer, true);
 
         //Update health UI
         UpdateHealthUI();
@@ -80,7 +83,8 @@ public class PlayerHealth : MonoBehaviour
             invincibilityTimer -= Time.fixedDeltaTime;
             if (invincibilityTimer <= 0f)
             {
-                collider.enabled = true;
+                //Reactivate collision
+                Physics.IgnoreLayerCollision(playerLayer, orcaLayer, false);
                 isInvincible = false;
             }
         }

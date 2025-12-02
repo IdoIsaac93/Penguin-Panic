@@ -37,6 +37,10 @@ public class FishController : MonoBehaviour
     [SerializeField] private int scoreAmount = 10;
     public static event Action<int> OnFishCaught;
 
+    //Water spray
+    [SerializeField] private ParticleSystem sprayParticles;
+    private ParticleSystem.EmissionModule emission;
+
     private SchoolController school;
     private Vector3 velocity;
     private Vector3 randomPush;
@@ -53,6 +57,8 @@ public class FishController : MonoBehaviour
         velocity = UnityEngine.Random.insideUnitCircle;
         velocity.y = 0f;
         velocity *= minSpeed;
+
+        emission = sprayParticles.emission;
 
         StartCoroutine(UpdateRandom());
     }
@@ -79,6 +85,10 @@ public class FishController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        emission.rateOverTime = rb.linearVelocity.magnitude * 2f;
+    }
     private void FixedUpdate()
     {
         if (school == null) { return; }
@@ -205,5 +215,12 @@ public class FishController : MonoBehaviour
             // Destroy this fish
             Destroy(gameObject);
         }
+    }
+
+    //Visualise player avoidance radius
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, playerAvoidanceRadius);
     }
 }

@@ -149,7 +149,7 @@ public class OrcaFSM : MonoBehaviour
         circle.onStay = () =>
         {
             //Check for stuck state
-            if (OrcaIsStuck())
+            if (OrcaIsStuck()) return;
 
                 controller.CircleAround(player.transform);
             //Increment circle timer

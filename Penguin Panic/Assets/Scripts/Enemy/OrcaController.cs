@@ -17,6 +17,10 @@ public class OrcaController : MonoBehaviour
     [Header("Damage Settings")]
     [SerializeField] private int damage = 1;
 
+    [Header("Particle System")]
+    [SerializeField] private ParticleSystem sprayParticles;
+    private ParticleSystem.EmissionModule emission;
+
     //Stuck
     public bool IsStuck { get; set; } = false;
     public Vector3 Target { get { return target; } }
@@ -47,6 +51,9 @@ public class OrcaController : MonoBehaviour
         rb.linearDamping = waterDrag;
         //Initial Behavior
         SetBehavior(clockwiseLoop);
+        //Particle System
+        emission = sprayParticles.emission;
+
     }
 
     private void Update()
@@ -59,6 +66,12 @@ public class OrcaController : MonoBehaviour
         if (Vector3.Distance(transform.position, target) < waypointRadius)
         {
             curPathIndex = behavior.GetNextPoint(curPathIndex);
+        }
+
+        //Particle System
+        if (sprayParticles != null)
+        {
+            emission.rateOverTime = rb.linearVelocity.magnitude * 2f;
         }
     }
 

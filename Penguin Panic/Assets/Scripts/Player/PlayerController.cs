@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Android;
 using UnityEngine.Windows;
 
 public class PlayerController : MonoBehaviour
@@ -14,10 +15,14 @@ public class PlayerController : MonoBehaviour
     [Header("Drag Settings")]
     [SerializeField] private float waterDrag = 1f;
     [SerializeField] private float iceDrag = 5f;
-    
+
     //Input reader
     [Header("Input Settings")]
     [SerializeField] private InputReader inputReader;
+
+    [Header("Particle System")]
+    [SerializeField] private ParticleSystem sprayParticles;
+    private ParticleSystem.EmissionModule emission;
 
     //Event
     public static event Action OnEnterWater;
@@ -34,6 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         inputReader.EnablePlayerActions();
         playerRigidbody = GetComponent<Rigidbody>();
+        emission = sprayParticles.emission;
     }
 
     //Enable and Disable input reader
@@ -59,6 +65,13 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.PauseGame();
     }
 
+    private void Update()
+    {
+        if (sprayParticles != null && isSwimming)
+        {
+            emission.rateOverTime = playerRigidbody.linearVelocity.magnitude * 2f;
+        }
+    }
     private void FixedUpdate()
     {
         float speed = isSwimming ? swimSpeed : walkSpeed;
@@ -92,6 +105,11 @@ public class PlayerController : MonoBehaviour
             isSwimming = false;
             playerRigidbody.linearDamping = iceDrag;
             currentIceberg = other.GetComponent<IcebergController>();
+            //Turn off water spray
+            if (sprayParticles != null)
+            {
+                emission.enabled = false;
+            }
         }
     }
 
@@ -104,6 +122,11 @@ public class PlayerController : MonoBehaviour
             playerRigidbody.linearDamping = waterDrag;
             currentIceberg = null;
             OnEnterWater?.Invoke();
+            //Turn on water spray
+            if (sprayParticles != null)
+            {
+                emission.enabled = true;
+            }
         }
     }
 }
