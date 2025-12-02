@@ -17,14 +17,22 @@ public class OrcaController : MonoBehaviour
     [Header("Damage Settings")]
     [SerializeField] private int damage = 1;
 
+    //Stuck
+    public bool IsStuck { get; set; } = false;
+    public Vector3 Target { get { return target; } }
+    public float WayPointRadius { get { return waypointRadius; } }
+
+    //Events
     public static event Action OnPlayerCaught;
 
+    //Components and State
     private Rigidbody rb;
     private int curPathIndex = 0;
+    private int stuckTargetIndex = 0;
     private Vector3 target;
     private Animator animator;
 
-    // Behaviors
+    //Behaviors
     private Behavior behavior;
     private ClockwiseLoop clockwiseLoop = new();
     private CounterClockwiseLoop counterClockwiseLoop = new();
@@ -32,8 +40,10 @@ public class OrcaController : MonoBehaviour
 
     private void Awake()
     {
+        //Components
         rb = GetComponent<Rigidbody>();
         animator = GetComponentInChildren<Animator>();
+        //Water Drag
         rb.linearDamping = waterDrag;
         //Initial Behavior
         SetBehavior(clockwiseLoop);
@@ -41,7 +51,10 @@ public class OrcaController : MonoBehaviour
 
     private void Update()
     {
-        target = path.GetPoint(curPathIndex);
+        if (!IsStuck)
+            target = path.GetPoint(curPathIndex);
+        else
+            target = path.GetPoint(stuckTargetIndex);
 
         if (Vector3.Distance(transform.position, target) < waypointRadius)
         {
@@ -58,6 +71,7 @@ public class OrcaController : MonoBehaviour
     public void Stop()
     {
         rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
     }
 
     public void Patrol()
@@ -80,6 +94,11 @@ public class OrcaController : MonoBehaviour
         MoveTowards(circleTarget);
     }
 
+    public void HandleStuck()
+    {
+        MoveTowards(target);
+    }
+
     private void MoveTowards(Vector3 destination)
     {
         Vector3 direction = destination - transform.position;
@@ -87,7 +106,10 @@ public class OrcaController : MonoBehaviour
         direction.Normalize();
 
         //Avoid icebergs
-        direction = AvoidIcebergs(direction);
+        if (!IsStuck)
+        {
+            direction = AvoidIcebergs(direction);
+        }
 
         float angle = Vector3.SignedAngle(transform.forward, direction, Vector3.up);
         float rotationStep = rotationSpeed * Time.fixedDeltaTime;

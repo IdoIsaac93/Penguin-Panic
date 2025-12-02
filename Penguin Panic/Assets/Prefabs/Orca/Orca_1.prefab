@@ -221,12 +221,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrcaFSM
   controller: {fileID: 7895217040845272420}
+  orcaCollider: {fileID: 0}
+  rb: {fileID: 0}
   player: {fileID: 0}
   chanceToPatrol: 0.1
   chanceToIdleFromPatrol: 0.02
   chanceToChangeBehavior: 0.1
   visionLostTime: 5
   circleDuration: 5
+  stuckSpeedThreshold: 1
+  stuckTimeThreshold: 3
 --- !u!114 &2843014233887093367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +266,7 @@ MonoBehaviour:
   waterDrag: 1
   avoidanceRadius: 3
   avoidanceForce: 200
+  damage: 1
 --- !u!114 &7787354193899426078
 MonoBehaviour:
   m_ObjectHideFlags: 0

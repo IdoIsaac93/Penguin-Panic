@@ -15,12 +15,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float invincibilityDuration = 2f;
     private bool isInvincible = true;
     private float invincibilityTimer = 0f;
+    private Collider collider;
 
     public static event Action OnPlayerDeath;
 
     private void Start()
     {
         currentHealth = maxHealth;
+        collider = GetComponent<Collider>();
         GameManager.Instance.UIManager.InitHealthUI(maxHealth);
         GameManager.Instance.UIManager.UpdateHealthUI(currentHealth);
     }
@@ -35,6 +37,8 @@ public class PlayerHealth : MonoBehaviour
     {
         if (isInvincible) return;
         currentHealth -= damage;
+        //Deactivate collision
+        collider.enabled = false;
 
         //Update health UI
         UpdateHealthUI();
@@ -76,6 +80,7 @@ public class PlayerHealth : MonoBehaviour
             invincibilityTimer -= Time.fixedDeltaTime;
             if (invincibilityTimer <= 0f)
             {
+                collider.enabled = true;
                 isInvincible = false;
             }
         }

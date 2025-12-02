@@ -221,12 +221,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OrcaFSM
   controller: {fileID: 7895217040845272420}
+  orcaCollider: {fileID: 0}
+  rb: {fileID: 0}
   player: {fileID: 0}
   chanceToPatrol: 0.1
   chanceToIdleFromPatrol: 0.02
   chanceToChangeBehavior: 0.1
   visionLostTime: 5
   circleDuration: 5
+  stuckSpeedThreshold: 1
+  stuckTimeThreshold: 3
 --- !u!114 &2843014233887093367
 MonoBehaviour:
   m_ObjectHideFlags: 0
