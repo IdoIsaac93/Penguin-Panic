@@ -11,9 +11,9 @@ public class ScoreManager : MonoBehaviour
 
     [Header("Score Modifiers")]
     [SerializeField] private int timePenaltyPerSecond = 1;
-    [SerializeField] private int healthBonusPerHealth = 20;
+    [SerializeField] private float healthBonusPerHealth = 0.5f;
     private int timePenalty = 0;
-    private int healthBonus = 0;
+    private float healthBonus = 0;
 
     //Subscribe to events
     private void OnEnable()
@@ -63,8 +63,8 @@ public class ScoreManager : MonoBehaviour
     private void AddTotalScore()
     {
         timePenalty = Mathf.FloorToInt(GameManager.Instance.LevelTimer) * timePenaltyPerSecond;
-        healthBonus = GameManager.Instance.Player.GetComponent<PlayerHealth>().CurrentHealth * healthBonusPerHealth;
-        totalScore += currentScore - timePenalty + healthBonus;
+        healthBonus = GameManager.Instance.Player.GetComponent<PlayerHealth>().CurrentHealth * healthBonusPerHealth + healthBonusPerHealth;
+        totalScore += (int)Mathf.Round(currentScore * healthBonus - timePenalty);
         totalScore = Mathf.Max(totalScore, 0);
         GameManager.Instance.UIManager.UpdateTotalScore(totalScore);
     }
@@ -72,7 +72,7 @@ public class ScoreManager : MonoBehaviour
     private void OnLose()
     {
         AddTotalScore();
-        failedLevelScore = currentScore - timePenalty + healthBonus;
+        failedLevelScore = (int)Mathf.Round(currentScore * healthBonus - timePenalty);
     }
 
     public void HandleRetryLevel()

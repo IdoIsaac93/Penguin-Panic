@@ -5724,7 +5724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   timePenaltyPerSecond: 1
-  healthBonusPerHealth: 10
+  healthBonusPerHealth: 0.5
 --- !u!114 &1928024014
 MonoBehaviour:
   m_ObjectHideFlags: 0
