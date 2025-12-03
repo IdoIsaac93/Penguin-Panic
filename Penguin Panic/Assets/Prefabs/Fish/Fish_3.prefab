@@ -164,7 +164,7 @@ MonoBehaviour:
   avoidanceForce: 5
   followVelocity: 1
   followRadius: 3
-  playerAvoidanceRadius: 5
+  playerAvoidanceRadius: 3
   playerAvoidanceForce: 7
   scoreAmount: 100
   sprayParticles: {fileID: 4317613375507766239}

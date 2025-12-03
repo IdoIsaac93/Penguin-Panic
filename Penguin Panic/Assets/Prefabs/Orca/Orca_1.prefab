@@ -5067,8 +5067,9 @@ MonoBehaviour:
   chanceToChangeBehavior: 0.1
   visionLostTime: 5
   circleDuration: 5
-  stuckSpeedThreshold: 1
+  stuckSpeedThreshold: 1.5
   stuckTimeThreshold: 3
+  bound: {x: 100, y: 50}
 --- !u!114 &2843014233887093367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5099,7 +5100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::OrcaController
   path: {fileID: 8227567790629422708}
   speed: 220
-  rotationSpeed: 85
+  rotationSpeed: 70
   waypointRadius: 5
   waterDrag: 1
   avoidanceRadius: 3

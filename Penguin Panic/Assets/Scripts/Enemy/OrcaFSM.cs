@@ -21,6 +21,7 @@ public class OrcaFSM : MonoBehaviour
     [Header("Stuck")]
     [SerializeField] private float stuckSpeedThreshold = 0.2f;
     [SerializeField] private float stuckTimeThreshold = 3f;
+    [SerializeField] private Vector2 bound;
 
     //Timers
     private float statesTimer = 0f;
@@ -192,6 +193,18 @@ public class OrcaFSM : MonoBehaviour
 
     private bool OrcaIsStuck()
     {
+        //Check if out of bounds
+        if (transform.position.x > bound.x
+            || transform.position.x < -bound.x
+            || transform.position.z > bound.y
+            || transform.position.z < -bound.y)
+        {
+            print($"{transform.position}");
+            stateMachine.TransitionTo("Stuck");
+            return true;
+        }
+
+        //Check if below speed limit long enough
         if (rb.linearVelocity.magnitude < stuckSpeedThreshold)
         {
             stuckTimer += Time.fixedDeltaTime;
